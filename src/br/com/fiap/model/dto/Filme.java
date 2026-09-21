@@ -4,11 +4,10 @@ public class Filme {
     private int codigo;
     private String titulo;
     private String genero;
-    private String  produtora;
+    private String produtora;
 
     //construtor vazio
     public Filme (){
-
     }
 
 
