@@ -8,13 +8,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class FilmesDAO {
+public class FilmeDAO {
+
+    //atributo
     private Connection con;
 
-    public FilmesDAO (Connection con){
+    //construtor com passagem de parametro
+    public FilmeDAO(Connection con){
         this.con = con;
     }
 
+    //getter
     public Connection getCon() {
         return con;
     }
@@ -51,7 +55,7 @@ public class FilmesDAO {
             ps.setInt(4, filme.getCodigo());
 
             if (ps.executeUpdate() > 0){
-                return "Inserido com sucesso";
+                return "Alterado com sucesso";
             }else {
 
                 return "Erro ao inserir";

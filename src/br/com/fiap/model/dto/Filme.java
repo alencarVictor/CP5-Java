@@ -2,49 +2,26 @@ package br.com.fiap.model.dto;
 
 public class Filme {
     private int codigo;
-    private String titulo, genero, produtora;
+    private String titulo;
+    private String genero;
+    private String  produtora;
 
-    //construtor vazio e com parametros
-    public Filme (){}
+    //construtor vazio
+    public Filme (){
 
-    public Filme(int codigo, String titulo, String genero, String produtora) {
-        this.codigo = codigo;
-        this.titulo = titulo;
-        this.genero = genero;
-        this.produtora = produtora;
     }
+
 
     //getters and setters
+    public int getCodigo() {return codigo;}
+    public void setCodigo(int codigo) {this.codigo = codigo;}
 
-    public int getCodigo() {
-        return codigo;
-    }
+    public String getTitulo() {return titulo;}
+    public void setTitulo(String titulo) {this.titulo = titulo;}
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+    public String getProdutora() {return produtora;}
+    public void setProdutora(String produtora) {this.produtora = produtora;}
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getProdutora() {
-        return produtora;
-    }
-
-    public void setProdutora(String produtora) {
-        this.produtora = produtora;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
+    public String getGenero() {return genero;}
+    public void setGenero(String genero) {this.genero = genero;}
 }
