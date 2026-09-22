@@ -36,16 +36,16 @@ public class FilmeView {
 
                     case 1:
                         codigo = Integer.parseInt(
-                                JOptionPane.showInputDialog("Digite o código do filme")
+                                JOptionPane.showInputDialog("Digite o código do filme que deseja alterar")
                         );
-                        titulo = JOptionPane.showInputDialog("Digite o titulo do filme");
-                        genero = JOptionPane.showInputDialog("Digite o genero do filme");
-                        produtora = JOptionPane.showInputDialog("Digite a produtora do filme");
+                        titulo = JOptionPane.showInputDialog("Digite o novo titulo do filme");
+                        genero = JOptionPane.showInputDialog("Digite o novo genero do filme");
+                        produtora = JOptionPane.showInputDialog("Digite a nova produtora do filme");
                         System.out.println(filmeController.alterarFilme(codigo,titulo, genero, produtora));
                         break;
                     case 2:
                         codigo = Integer.parseInt(
-                                JOptionPane.showInputDialog("Digite o código do filme")
+                                JOptionPane.showInputDialog("Digite o código do filme que deseja excluir")
                         );
                         System.out.println(filmeController.excluirFilme(codigo));
                         break;

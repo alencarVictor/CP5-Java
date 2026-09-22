@@ -58,7 +58,7 @@ public class FilmeDAO {
                 return "Alterado com sucesso";
             }else {
 
-                return "Erro ao inserir";
+                return "Erro ao alterar";
             }
 
         }catch (SQLException e){
