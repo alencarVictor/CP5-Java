@@ -25,14 +25,14 @@ public class FilmeDAO {
 
     //metodo da classe
     public String inserir(Filme filme){
-        String sql = "insert into ddd_filme(codigo, titulo, genero, produtora) values(?,?,?,?)";
+        String sql = "insert into ddd_filme(titulo, genero, produtora) values(?,?,?)";
         //PreparedStatement para proteger contra SQL injection
 
         try (PreparedStatement ps =  getCon().prepareStatement(sql)){
-            ps.setInt(1, filme.getCodigo());
-            ps.setString(2, filme.getTitulo());
-            ps.setString(3, filme.getGenero());
-            ps.setString(4, filme.getProdutora());
+
+            ps.setString(1, filme.getTitulo());
+            ps.setString(2, filme.getGenero());
+            ps.setString(3, filme.getProdutora());
             if (ps.executeUpdate() > 0){
                 return "Inserido com sucesso";
             }else {
@@ -46,7 +46,7 @@ public class FilmeDAO {
     }
 
     public String alterar(Filme filme){
-        String sql = "update ddd_filme set titulo = ?, genero = ?, produtora = ? where codigo =  values(?,?,?,?)";
+        String sql = "update ddd_filme set titulo = ?, genero = ?, produtora = ? where codigo =?";
 
         try (PreparedStatement ps =  getCon().prepareStatement(sql)){
             ps.setString(1, filme.getTitulo());
