@@ -6,6 +6,7 @@ import br.com.fiap.model.dto.Filme;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class FilmeController {
 
@@ -62,17 +63,28 @@ public class FilmeController {
         return resultado;
     }
 
-//    public String listarTodosOsFilmes () throws
-//            ClassNotFoundException, SQLException{
-//        String resultado;
-//        Connection con = ConnectionFactory.abrirConexao();
-//        Filme filme = new Filme();
-//
-//
-//        FilmeDAO filmeDAO = new FilmeDAO(con);
-//        resultado = filmeDAO.listarTodosFilmes(filme);
-//
-//        ConnectionFactory.fecharConexao(con);
-//        return  resultado;
-//    }
+    public String listarTodosOsFilmes () throws
+            ClassNotFoundException, SQLException{
+
+        String resultado ="";
+
+       Connection con = ConnectionFactory.abrirConexao();
+        FilmeDAO filmeDAO = new FilmeDAO(con);
+        ArrayList<Filme> filmes = filmeDAO.listarTodosFilmes();
+
+        if (filmes != null){
+            for (Filme filme: filmes){
+                resultado += "Codigo: "+ filme.getCodigo()+"\n";
+                resultado += "Titulo: "+ filme.getTitulo()+"\n";
+                resultado += "Genero: "+ filme.getGenero()+"\n";
+                resultado += "Produtora: "+ filme.getProdutora()+"\n";
+            }
+
+        }else{
+            resultado = "Nenhum filme econtrado";
+        }
+        ConnectionFactory.fecharConexao(con);
+       return  resultado;
+   }
 }
+
