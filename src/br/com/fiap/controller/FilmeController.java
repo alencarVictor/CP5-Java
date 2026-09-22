@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class FilmeController {
 
-    public String inserirCarro(String titulo, String genero , String produtora) throws
+    public String inserirFilme(String titulo, String genero , String produtora) throws
             ClassNotFoundException, SQLException{
         String resultado;
 
@@ -22,7 +22,7 @@ public class FilmeController {
         filme.setProdutora(produtora);
 
         FilmeDAO filmeDAO = new FilmeDAO(con);
-        resultado = filmeDAO.inserirFilme(filme);
+        resultado = filmeDAO.inserir(filme);
         ConnectionFactory.fecharConexao(con);
         return resultado;
     }
@@ -40,7 +40,7 @@ public class FilmeController {
         filme.setProdutora(produtora);
 
         FilmeDAO filmeDAO = new FilmeDAO(con);
-        resultado = filmeDAO.alterarFilme(filme);
+        resultado = filmeDAO.alterar(filme);
 
         ConnectionFactory.fecharConexao(con);
         return resultado;
@@ -57,20 +57,20 @@ public class FilmeController {
         filme.setCodigo(codigo);
 
         FilmeDAO filmeDAO = new FilmeDAO(con);
-        resultado = filmeDAO.excluirFilme(filme);
+        resultado = filmeDAO.excluir(filme);
 
         ConnectionFactory.fecharConexao(con);
         return resultado;
     }
 
-    public String listarTodosOsFilmes () throws
+    public String listarTodosFilmes() throws
             ClassNotFoundException, SQLException{
 
         String resultado ="";
 
        Connection con = ConnectionFactory.abrirConexao();
         FilmeDAO filmeDAO = new FilmeDAO(con);
-        ArrayList<Filme> filmes = filmeDAO.listarTodosFilmes();
+        ArrayList<Filme> filmes = filmeDAO.listarTodos();
 
         if (filmes != null){
             for (Filme filme: filmes){

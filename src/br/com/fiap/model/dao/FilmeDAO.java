@@ -24,7 +24,7 @@ public class FilmeDAO {
     }
 
     //metodo da classe
-    public String inserirFilme(Filme filme){
+    public String inserir(Filme filme){
         String sql = "insert into ddd_filme(codigo, titulo, genero, produtora) values(?,?,?,?)";
         //PreparedStatement para proteger contra SQL injection
 
@@ -45,7 +45,7 @@ public class FilmeDAO {
         }
     }
 
-    public String alterarFilme(Filme filme){
+    public String alterar(Filme filme){
         String sql = "update ddd_filme set titulo = ?, genero = ?, produtora = ? where codigo =  values(?,?,?,?)";
 
         try (PreparedStatement ps =  getCon().prepareStatement(sql)){
@@ -66,7 +66,7 @@ public class FilmeDAO {
         }
     }
 
-    public String excluirFilme(Filme filme){
+    public String excluir(Filme filme){
         String sql = "delete from ddd_filme where codigo = ?";
         try (PreparedStatement ps =  getCon().prepareStatement(sql)){
             ps.setInt(1, filme.getCodigo());
@@ -82,7 +82,7 @@ public class FilmeDAO {
         }
     }
 
-    public ArrayList<Filme> listarTodosFilmes() {
+    public ArrayList<Filme> listarTodos() {
         String sql = "select * from ddd_filme order by codigo";
         ArrayList<Filme> listaFilme = new ArrayList<>();
         try (PreparedStatement ps = getCon().prepareStatement(sql);
