@@ -9,7 +9,7 @@ public class FilmeView {
 
         int codigo;
         String titulo , genero , produtora;
-        String[] escolha = {"inserir","Alterar","Excluir","Listar"};
+        String[] escolha = {"Inserir","Alterar","Excluir","Listar"};
         int opcao;
         FilmeController filmeController = new FilmeController();
         do{
