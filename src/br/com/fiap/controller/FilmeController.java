@@ -77,7 +77,7 @@ public class FilmeController {
                 resultado += "Codigo: "+ filme.getCodigo()+"\n";
                 resultado += "Titulo: "+ filme.getTitulo()+"\n";
                 resultado += "Genero: "+ filme.getGenero()+"\n";
-                resultado += "Produtora: "+ filme.getProdutora()+"\n";
+                resultado += "Produtora: "+ filme.getProdutora()+"\n\n";
             }
 
         }else{
