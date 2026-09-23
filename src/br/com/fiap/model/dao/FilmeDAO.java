@@ -1,3 +1,9 @@
+//Ana Paula Cunha Brum - RM571359
+//Gabriella Serni Ponzetta - RM566296
+//Julio Cesar Iwata de Oliveira Barros - RM573723
+//Rafael Santos Dias - RM574105
+//Victor Felipe Silva Alencar - RM574057
+
 package br.com.fiap.model.dao;
 
 import br.com.fiap.model.dto.Filme;
